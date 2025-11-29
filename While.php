@@ -1,32 +1,38 @@
 <?php
 $counter = 1;
-$Bottle = 8;
-$price = 5.00;
+$Bottle  = 8;
+$price   = 5.00;
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Liquor Store - While Loop</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-     <h1>The Liquior Store</h1>
-    <h2>Fundador</h2>
 
-<h3>Prices for each bottle</h3>
+<?php include 'include/header.php'; ?>
+    
+<h1>The Liquor Store</h1>
+<h3>Price Table for Fundador</h3>
+
+<p><strong>Price per Bottle:</strong> $<?= number_format($price, 2); ?></p>
+
 <p>
 <?php
 while ($counter <= $Bottle) {
-    echo $counter;
-    echo ' Bottle cost $';
-    echo $price * $counter;
-    echo '<br>';
+
+    $total = $price * $counter;
+
+    echo "<strong>$counter Bottle(s):</strong> $" . number_format($total, 2) . "<br>";
+
     $counter++;
 }
 ?>
 </p>
 <?php include 'include/footer.php'; ?>
-<?php include 'include/header.php'; ?>
 
 </body>
 </html>
